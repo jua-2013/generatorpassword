@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+$primaryColor: #027202;
+
+@mixin DisplayFlex($justify, $alingItens, $flexdirection) {
+    display: flex;
+    align-items: $alingItens;
+    justify-content: $justify;
+    flex-direction: $flexdirection;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+}
+
+form {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    padding: 3rem;
+    gap: 3rem;
+
+    label {
+        color: #fff;
+        font-size: 1.4rem;
+    }
+
+    input {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        caret-color: $primaryColor;
+    }
+
+    input,
+    label {
+        display: block;
+    }
+
+    .div_inputs {
+        margin: 1rem 0;
+        background-color: white;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        input{
+            flex-grow: 1;
+        }
+
+        img {
+            min-width: 2rem;
+            width: 3rem;
+            max-width: 4rem;
+
+        }
+
+        #img_password {
+            cursor: pointer;
+        }
+    }
+
+}
+
+#div_span {
+
+    p {
+        color: #fff;
+        font-size: 1.6rem;
+
+        span:hover {
+            color: $primaryColor;
+            text-decoration: underline;
+            text-decoration-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+#hidden {
+    accent-color: $primaryColor;
+    display: none;
+
+    .hidden-input {
+        @include DisplayFlex(space-between, center, row);
+        margin: 1rem 0;
+
+        input {
+            color: wheat;
+        }
+        label{
+            font-size: 1.4rem;
+        }
+
+    }
+
+    .hidden-btn {
+        width: 100%;
+        display: grid;
+        place-items: center;
+
+        button {
+            position: relative;
+            z-index: 1;
+            padding: 1rem;
+            background-color: #fff;
+            color: $primaryColor;
+            cursor: pointer;
+            border: none;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: $primaryColor;
+                transition: .7s ease;
+                z-index: -1;
+
+            }
+            &:hover{
+                color: #fff;
+                &::after{
+                    height: 105%;
+                    
+                }
+                
+            }
+        }
+        
+    }
+
+}
+
+#password-hidden {
+    color: $primaryColor;
+    @include DisplayFlex(center, center, column);
+    margin-top: 1rem;
+    display: none;
+
+    div:has(p) {
+        background-color: white;
+        padding: 1rem;
+        @include DisplayFlex(center, center, column);
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        div {
+            font-size: 1.6rem;
+        }
+    }
+
+}
+
+#caixa {
+    background-image: black;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12,auto);
+    gap: .5rem;
+    animation: caixa 3s linear infinite alternate;
+
+}
+
+.box {
+    max-width: 15rem;
+    max-height: 15rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    width: auto;
+    height: auto;
+    background-color: rgb(44, 44, 44);
+
+    &:hover {
+        background-color: $primaryColor;
+
+    }
+
+
+}
+
+
+@keyframes box {
+    0% {
+        background-color: $primaryColor;
+    }
+
+    50% {
+        background-color: rgb(3, 202, 3);
+
+    }
+
+    100% {
+        background-color: rgb(44, 44, 44);
+
+    }
+}
+
+@keyframes caixa {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: $primaryColor;
+
+    }
+}
+@keyframes btn {
+
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+    
+}
+
+.show{
+    display: block !important;
+}

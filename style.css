@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+form {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+  padding: 3rem;
+  gap: 3rem;
+}
+form label {
+  color: #fff;
+  font-size: 1.4rem;
+}
+form input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  caret-color: #027202;
+}
+form input,
+form label {
+  display: block;
+}
+form .div_inputs {
+  margin: 1rem 0;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+form .div_inputs input {
+  flex-grow: 1;
+}
+form .div_inputs img {
+  min-width: 2rem;
+  width: 3rem;
+  max-width: 4rem;
+}
+form .div_inputs #img_password {
+  cursor: pointer;
+}
+
+#div_span p {
+  color: #fff;
+  font-size: 1.6rem;
+}
+#div_span p span:hover {
+  color: #027202;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  cursor: pointer;
+}
+
+#hidden {
+  accent-color: #027202;
+  display: none;
+}
+#hidden .hidden-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+#hidden .hidden-input input {
+  color: wheat;
+}
+#hidden .hidden-input label {
+  font-size: 1.4rem;
+}
+#hidden .hidden-btn {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+#hidden .hidden-btn button {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  background-color: #fff;
+  color: #027202;
+  cursor: pointer;
+  border: none;
+}
+#hidden .hidden-btn button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #027202;
+  transition: 0.7s ease;
+  z-index: -1;
+}
+#hidden .hidden-btn button:hover {
+  color: #fff;
+}
+#hidden .hidden-btn button:hover::after {
+  height: 105%;
+}
+
+#password-hidden {
+  color: #027202;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  display: none;
+}
+#password-hidden div:has(p) {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#password-hidden div:has(p) p {
+  font-size: 1.5rem;
+}
+#password-hidden div:has(p) div {
+  font-size: 1.6rem;
+}
+
+#caixa {
+  background-image: black;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  gap: 0.5rem;
+  animation: caixa 3s linear infinite alternate;
+}
+
+.box {
+  max-width: 15rem;
+  max-height: 15rem;
+  min-width: 5rem;
+  min-height: 5rem;
+  width: auto;
+  height: auto;
+  background-color: rgb(44, 44, 44);
+}
+.box:hover {
+  background-color: #027202;
+}
+
+@keyframes box {
+  0% {
+    background-color: #027202;
+  }
+  50% {
+    background-color: rgb(3, 202, 3);
+  }
+  100% {
+    background-color: rgb(44, 44, 44);
+  }
+}
+@keyframes caixa {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: #027202;
+  }
+}
+@keyframes btn {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+.show {
+  display: block !important;
+}/*# sourceMappingURL=style.css.map */
